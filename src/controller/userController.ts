@@ -99,7 +99,7 @@ class UserController {
         const options: CookieOptions = {
           httpOnly: true,
           secure: true,
-          sameSite: "lax",
+          sameSite: "none",
         };
         console.log("Token of User : ",token);
         res.cookie("login_cookie", token, options).status(200).json({
