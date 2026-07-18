@@ -80,6 +80,8 @@ class UserController {
       },
     });
 
+    console.log("Data of User : ",req.body);
+
     if (!data) {
       res.status(400).json({
         message: "Email not found please register",
@@ -96,14 +98,14 @@ class UserController {
         const token = generateToken(data.userId);
         const options: CookieOptions = {
           httpOnly: true,
-          secure: false,
+          secure: true,
           sameSite: "lax",
         };
+        console.log("Token of User : ",token);
         res.cookie("login_cookie", token, options).status(200).json({
           message: "User login successfully",
           data,
         });
-        return;
       }
     }
   }
