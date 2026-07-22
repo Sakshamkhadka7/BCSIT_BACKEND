@@ -4,7 +4,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174","http://localhost:5172","https://bcsit-frontend-jcpf.vercel.app"],
+    origin: ["http://localhost:5173", "http://localhost:5174","http://localhost:5172","https://bcsit-frontend-jcpf.vercel.app","https://bcsit-admin-gmas.vercel.app"],
     credentials: true,
   }),
 );
