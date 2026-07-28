@@ -16,16 +16,16 @@ class QuestionController {
     if (!subjectQuestion || !questionYear || !subjectId) {
       return sendResponse(res, 403, "All fields are required");
     }
-    questionYear = Number(questionYear);
+    // questionYear = Number(questionYear);
 
-    const existQuestion = await Question.findOne({
-      where: {
-        questionYear: questionYear,
-      },
-    });
-    if (existQuestion) {
-      return sendResponse(res, 400, "This year question is already existed");
-    }
+    // const existQuestion = await Question.findOne({
+    //   where: {
+    //     questionYear: questionYear,
+    //   },
+    // });
+    // if (existQuestion) {
+    //   return sendResponse(res, 400, "This year question is already existed");
+    // }
     const cloudinaryResult = await uploadResource(req);
 
     const question = await Question.create({
